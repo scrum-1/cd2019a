@@ -6,3 +6,7 @@ http://scrum-1.github.io/cd2019a
 or 
 
 http://cpgx.kmol.info/cd2019a
+
+
+
+Team 2 : https://github.com/mdekmol/cd2019a-task1-2019cda_t1_g2 (2ag2)
