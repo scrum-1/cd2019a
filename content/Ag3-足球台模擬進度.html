@@ -136,7 +136,7 @@ init_mathjax();
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='各組期末報告說明.html'>各組期末報告說明</a><li class='has-children'><a href='執行規劃.html'>執行規劃</a><ul class='dropdown'><li><a href='手足球系統模擬.html'>手足球系統模擬</a></li></ul><li class='has-children'><a href='設計與繪圖.html'>設計與繪圖</a><ul class='dropdown'><li><a href='零組件尺寸分析.html'>零組件尺寸分析</a><li><a href='參數設計與繪圖.html'>參數設計與繪圖</a><li><a href='細部設計與 BOM.html'>細部設計與 BOM</a></li></ul><li class='has-children'><a href='V-rep 動態模擬.html'>V-rep 動態模擬</a><ul class='dropdown'><li><a href='送球機構設計與模擬.html'>送球機構設計與模擬</a><li class='has-children'><a href='系統功能展示.html'>系統功能展示</a><ul class='dropdown'><li><a href='第十二周-影像辨識尋找球和桿子位置.html'>第十二周-影像辨識尋找球和桿子位置</a><li><a href='第十三週-影像辨識機器對打.html'>第十三週-影像辨識機器對打</a></li></li></ul></ul><li class='has-children'><a href='結案報告.html'>結案報告</a><ul class='dropdown'><li><a href='專案口頭簡報.html'>專案口頭簡報</a><li><a href='專案報告書.html'>專案報告書</a></li>
+                     <li><a href='各組期末報告說明.html'>各組期末報告說明</a><li class='has-children'><a href='執行規劃.html'>執行規劃</a><ul class='dropdown'><li><a href='手足球系統模擬.html'>手足球系統模擬</a></li></ul><li class='has-children'><a href='設計與繪圖.html'>設計與繪圖</a><ul class='dropdown'><li><a href='零組件尺寸分析.html'>零組件尺寸分析</a><li><a href='參數設計與繪圖.html'>參數設計與繪圖</a><li><a href='細部設計與 BOM.html'>細部設計與 BOM</a></li></ul><li class='has-children'><a href='V-rep 動態模擬.html'>V-rep 動態模擬</a><ul class='dropdown'><li><a href='送球機構設計與模擬.html'>送球機構設計與模擬</a><li class='has-children'><a href='系統功能展示.html'>系統功能展示</a><ul class='dropdown'><li><a href='Ag3-足球台模擬進度.html'>Ag3-足球台模擬進度</a><li><a href='Ag3-第十二週-影像辨識尋找球和桿子位置.html'>Ag3-第十二週-影像辨識尋找球和桿子位置</a><li><a href='Ag3-第十三週-影像辨識機器對打.html'>Ag3-第十三週-影像辨識機器對打</a></li></li></ul></ul><li class='has-children'><a href='結案報告.html'>結案報告</a><ul class='dropdown'><li><a href='專案口頭簡報.html'>專案口頭簡報</a><li><a href='專案報告書.html'>專案報告書</a></li>
                       </ul>
                 </nav>
               </div>
@@ -147,148 +147,24 @@ init_mathjax();
           </div>
           
         </header>
-    <div id="tipue_search_content">系統功能展示 << <a href='系統功能展示.html'>Previous</a> <a href='第十三週-影像辨識機器對打.html'>Next</a> >> 第十三週-影像辨識機器對打<br /><h1>第十二周-影像辨識尋找球和桿子位置</h1>
-<p>利用影像辨識系統尋找紅方、藍方和綠球的位置。</p>
-<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/C947PvvFDiw" width="560"></iframe></p>
-<p>程式利用<a href="https://github.com/nemilya/vrep-api-python-opencv">https://github.com/nemilya/vrep-api-python-opencv</a>改編而成</p>
-<p>vrep設定檔:<a href="https://github.com/mdekmol/cd2019a-task1-2019cda_t1_g3_1/blob/master/v-rep/40623128/TableFootBall/v-rep/tablefootball%20-%200507.ttt">https://github.com/mdekmol/cd2019a-task1-2019cda_t1_g3_1/blob/master/v-rep/40623128/TableFootBall/v-rep/tablefootball - 0507.ttt</a></p>
-<p>程式檔:<a href="https://github.com/mdekmol/cd2019a-task1-2019cda_t1_g3_1/blob/master/v-rep/40623128/TableFootBall/v-rep/Image_Detection_RGB.py">https://github.com/mdekmol/cd2019a-task1-2019cda_t1_g3_1/blob/master/v-rep/40623128/TableFootBall/v-rep/Image_Detection_RGB.py</a></p>
-<p>程式碼:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import vrep
-import time
-
-from PIL import Image as I
-import array
-
-import cv2, numpy
-
-# function based on: 
-#   https://github.com/simondlevy/OpenCV-Python-Hacks/blob/master/greenball_tracker.py
-def track_green_object(image):
-    # Blur the image to reduce noise100
-    blur = cv2.GaussianBlur(image, (5,5),0)
-    # Convert BGR to HSV
-    hsv = cv2.cvtColor(blur, cv2.COLOR_BGR2HSV)
-    # Threshold the HSV image for only green colors
-    range = 15
-    lower_green = numpy.array([60-range,100,100])
-    upper_green = numpy.array([60+range,255,255])
-    # Threshold the HSV image to get only green colors
-    mask = cv2.inRange(hsv, lower_green, upper_green)
-    # Blur the mask
-    bmask = cv2.GaussianBlur(mask, (5,5),0)
-    # Take the moments to get the centroid
-    moments = cv2.moments(bmask)
-    m00 = moments['m00']
-    centroid_x, centroid_y = None, None
-    if m00 != 0:
-        centroid_x = int(moments['m10']/m00)
-        centroid_y = int(moments['m01']/m00)
-    # Assume no centroid
-    ctr = None
-    # Use centroid if it exists
-    if centroid_x != None and centroid_y != None:
-        ctr = (centroid_x, centroid_y)
-    return ctr
-
-def track_blue_object(image):
-    # Blur the image to reduce noise100
-    blur = cv2.GaussianBlur(image, (5,5),0)
-    # Convert BGR to HSV
-    hsv = cv2.cvtColor(blur, cv2.COLOR_BGR2HSV)
-    # Threshold the HSV image for only green colors
-    range = 15
-    lower_red = numpy.array([0-range,100,100])
-    upper_red = numpy.array([0+range,255,255])
-    # Threshold the HSV image to get only green colors
-    mask = cv2.inRange(hsv, lower_red, upper_red)
-    # Blur the mask
-    bmask = cv2.GaussianBlur(mask, (5,5),0)
-    # Take the moments to get the centroid
-    moments = cv2.moments(bmask)
-    m00 = moments['m00']
-    centroid_x, centroid_y = None, None
-    if m00 != 0:
-        centroid_x = int(moments['m10']/m00)
-        centroid_y = int(moments['m01']/m00)
-    # Assume no centroid
-    ctr = None
-    # Use centroid if it exists
-    if centroid_x != None and centroid_y != None:
-        ctr = (centroid_x, centroid_y)
-    return ctr
-    
-def track_red_object(image):
-    # Blur the image to reduce noise100
-    blur = cv2.GaussianBlur(image, (5,5),0)
-    # Convert BGR to HSV
-    hsv = cv2.cvtColor(blur, cv2.COLOR_BGR2HSV)
-    # Threshold the HSV image for only green colors
-    range = 15
-    lower_blue = numpy.array([120-range,100,100])
-    upper_blue = numpy.array([120+range,255,255])
-    # Threshold the HSV image to get only green colors
-    mask = cv2.inRange(hsv, lower_blue, upper_blue)
-    # Blur the mask
-    bmask = cv2.GaussianBlur(mask, (5,5),0)
-    # Take the moments to get the centroid
-    moments = cv2.moments(bmask)
-    m00 = moments['m00']
-    centroid_x, centroid_y = None, None
-    if m00 != 0:
-        centroid_x = int(moments['m10']/m00)
-        centroid_y = int(moments['m01']/m00)
-    # Assume no centroid
-    ctr = None
-    # Use centroid if it exists
-    if centroid_x != None and centroid_y != None:
-        ctr = (centroid_x, centroid_y)
-    return ctr
-
-vrep.simxFinish(-1)
-clientID = vrep.simxStart('127.0.0.1', 19997, True, True, 5000, 5)
-
-if clientID!=-1:
-  print('Connected to remote API server')
-  # get vision sensor objects
-  res, v0 = vrep.simxGetObjectHandle(clientID, 'vs1', vrep.simx_opmode_oneshot_wait)
-  res, v1 = vrep.simxGetObjectHandle(clientID, 'vs2', vrep.simx_opmode_oneshot_wait)
-  err, resolution, image = vrep.simxGetVisionSensorImage(clientID, v0, 0, vrep.simx_opmode_streaming)
-  time.sleep(1)
-  while (vrep.simxGetConnectionId(clientID) != -1):
-    # get image from vision sensor 'v0'
-    err, resolution, image = vrep.simxGetVisionSensorImage(clientID, v0, 0, vrep.simx_opmode_buffer)
-    if err == vrep.simx_return_ok:
-        image_byte_array = array.array('b', image)
-        #print(image_byte_array)
-        image_buffer = I.frombuffer("RGB", (resolution[0],resolution[1]), bytes(image_byte_array), "raw", "RGB", 0, 1)
-        img2 = numpy.asarray(image_buffer)
-      # try to find something green
-        ret_green = track_green_object(img2)
-        ret_red = track_red_object(img2)
-        ret_blue = track_blue_object(img2)
-      # overlay rectangle marker if something is found by OpenCV
-        if ret_green:
-            cv2.rectangle(img2,(ret_green[0]-5,ret_green[1]-5), (ret_green[0]+5,ret_green[1]+5), (0x99,0xff,0x33), 1)
-          # return image to sensor 'v1'
-        if ret_red:
-            cv2.rectangle(img2,(ret_red[0]-3,ret_red[1]-5), (ret_red[0]+3,ret_red[1]+5), (0xff,0x33,0x33), 1)
-        if ret_blue:
-            cv2.rectangle(img2,(ret_blue[0]-3,ret_blue[1]-5), (ret_blue[0]+3,ret_blue[1]+5), (0x33,0xcc,0xff), 1)
-        img2 = img2.ravel()
-        #print('B=',ret_blue[0],ret_blue[1])
-        #print('R=',ret_red[0],ret_red[1])
-        #print('G=',ret_green[0],ret_green[1])
-        vrep.simxSetVisionSensorImage(clientID, v1, img2, 0, vrep.simx_opmode_oneshot)
-    elif err == vrep.simx_return_novalue_flag:
-      print("no image yet")
-      pass
-    else:
-      print(err)
-else:
-  print("Failed to connect to remote API Server")
-  vrep.simxFinish(clientID)</pre>
-<br />系統功能展示 << <a href='系統功能展示.html'>Previous</a> <a href='第十三週-影像辨識機器對打.html'>Next</a> >> 第十三週-影像辨識機器對打</div>
+    <div id="tipue_search_content">系統功能展示 << <a href='系統功能展示.html'>Previous</a> <a href='Ag3-第十二週-影像辨識尋找球和桿子位置.html'>Next</a> >> Ag3-第十二週-影像辨識尋找球和桿子位置<br /><h1>Ag3-足球台模擬進度</h1>
+<h4>0506模擬測試</h4>
+<p>40623105</p>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/QPWfPGLW2BE" width="560"></iframe></p>
+<p></p>
+<p>40623109</p>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/JC-1Szy-1PI" width="560"></iframe></p>
+<p>40623118</p>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/2ZhJYcfZ7ms" width="560"></iframe></p>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/InFd99SzftQ" width="560"></iframe></p>
+<h4>0513<span>模擬測試</span></h4>
+<p>40623105</p>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/hDOCdXlDlfs" width="560"></iframe></p>
+<p>40623109</p>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/CCFIQs34HnI" width="560"></iframe></p>
+<p>40623118</p>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/jLj4x16FeSg" width="560"></iframe></p>
+<p></p><br />系統功能展示 << <a href='系統功能展示.html'>Previous</a> <a href='Ag3-第十二週-影像辨識尋找球和桿子位置.html'>Next</a> >> Ag3-第十二週-影像辨識尋找球和桿子位置</div>
         
     <!-- footer -->
       <div class="container">
