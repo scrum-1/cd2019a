@@ -147,14 +147,12 @@ init_mathjax();
           </div>
           
         </header>
-    <div id="tipue_search_content">Ag3-第十二週-影像辨識尋找球和桿子位置 << <a href='Ag3-第十二週-影像辨識尋找球和桿子位置.html'>Previous</a> <a href='Ag3-第十四週-影像辨識機器對打修正十三週錯誤.html'>Next</a> >> Ag3-第十四週-影像辨識機器對打修正十三週錯誤<br /><h1>Ag3-第十三週-影像辨識機器對打</h1>
-<p>利用影像辨識抓取球與操作桿位置並使之對打，</p>
-<p>由於影像需要處理時間，所以模擬速度越快抓取位置越不精確。</p>
-<p>已知錯誤:</p>
-<p>如果球打到桿子後方會無法回擊。</p>
-<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/Nv5ppem_j_8" width="560"></iframe></p>
+    <div id="tipue_search_content">Ag3-第十三週-影像辨識機器對打 << <a href='Ag3-第十三週-影像辨識機器對打.html'>Previous</a> <a href='Ag3-第十四週-更改影像辨識方式.html'>Next</a> >> Ag3-第十四週-更改影像辨識方式<br /><h1>Ag3-第十四週-影像辨識機器對打修正十三週錯誤</h1>
+<p>解決了上週若球至桿子後方將無法回擊的問題</p>
+<p>影片:</p>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/vXuvJptDWkA" width="560"></iframe></p>
 <p>vrep設定檔:<a href="https://github.com/mdekmol/cd2019a-task1-2019cda_t1_g3_1/blob/master/v-rep/40623128/TableFootBall/v-rep/tablefootball%20-%200507.ttt">tablefootball - 0507.ttt</a></p>
-<p>程式檔:<a href="https://github.com/mdekmol/cd2019a-task1-2019cda_t1_g3_1/blob/master/v-rep/40623128/TableFootBall/v-rep/Image_Detection_play.py">Image_Detection_play.py</a></p>
+<p>程式檔:<a href="https://github.com/mdekmol/cd2019a-task1-2019cda_t1_g3_1/blob/master/v-rep/40623128/TableFootBall/v-rep/Image_Detection_play_v2.py">Image_Detection_play_v2.py</a></p>
 <p>程式碼:</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import vrep
 import time
@@ -168,6 +166,7 @@ import cv2, numpy
 #   https://github.com/simondlevy/OpenCV-Python-Hacks/blob/master/greenball_tracker.py
 def speed(handle,speed):
     vrep.simxSetJointTargetVelocity(clientID,handle,speed,vrep.simx_opmode_oneshot_wait)
+        
 def track_green_object(image):
     # Blur the image to reduce noise100
     blur = cv2.GaussianBlur(image, (5,5),0)
@@ -281,6 +280,7 @@ if clientID!=-1:
         #print('B=',ret_blue[1],ret_blue[0])#y軸座標為0 x軸座標為1
         #print('R=',ret_red[1],ret_red[0])
         #print('G=',ret_green[1],ret_green[0])
+        #'''
         if ret_green != None and ret_red != None and ret_blue != None:
             Bv = float(ret_green[0])-float(ret_blue[0])
             BBv=float(ret_green[1])-float(ret_blue[1])
@@ -291,25 +291,99 @@ if clientID!=-1:
             elif Bv&gt;0.0:
                 speed(BMo_handle,Bv*-0.02)
             else:
-                speed(BMo_handle,0)
+                pass
+                
+                
             if Rv&lt;0.0:
                 speed(RMo_handle,Rv*-0.02)
             elif Rv&gt;0.0:
                 speed(RMo_handle,Rv*-0.02)
             else:
-                speed(RMo_handle,0)
-            if RRv&lt;-10.0:
-                speed(RRev_handle,-2)
-            elif RRv&gt;-10.0:
-                speed(RRev_handle,2)
-            else:
                 pass
-            if BBv&lt;10.0:
-                speed(BRev_handle,-2)
-            elif BBv&gt;10.0:
-                speed(BRev_handle,2)
-            else:
-                pass
+                
+                
+            if  ret_blue[1] &gt;=18 and ret_green[1] &lt;= 17:
+                if ret_green[0] &gt;62.5:
+                    speed(BMo_handle,2)
+                    time.sleep(0.1)
+                    speed(BRev_handle,20)
+                    time.sleep(0.1)
+                    if ret_green[1] != ret_blue[1]:
+                        Bv = float(ret_green[0])-float(ret_blue[0])
+                        if Bv&lt;0.0:
+                            speed(BMo_handle,Bv*-0.02)
+                        elif Bv&gt;0.0:
+                            speed(BMo_handle,Bv*-0.02)
+                        else:
+                            pass
+                    else:
+                        speed(BRev_handle,2)
+                    
+                elif ret_green[0] &lt;62.5:
+                    speed(BMo_handle,-2)
+                    time.sleep(0.1)
+                    speed(BRev_handle,20)
+                    time.sleep(0.1)
+                    if ret_green[1] != ret_blue[1]:
+                        Bv = float(ret_green[0])-float(ret_blue[0])
+                        if Bv&lt;0.0:
+                            speed(BMo_handle,Bv*-0.02)
+                        elif Bv&gt;0.0:
+                            speed(BMo_handle,Bv*-0.02)
+                        else:
+                            pass
+                    else:
+                        speed(BRev_handle,2)
+            elif ret_green[0]-ret_blue[0] &gt;= -3 and ret_green[0]-ret_blue[0] &lt;= 3:
+                if BBv&lt;10.0:
+                    speed(BRev_handle,-2)
+                elif BBv&gt;10.0:
+                    speed(BRev_handle,2)
+                else:
+                    pass
+                    
+            
+            if  ret_red[1] &lt;=236 and ret_green[1] &gt;= 237:
+                if ret_green[0] &gt;62.5:
+                    speed(RMo_handle,2)
+                    time.sleep(0.1)
+                    speed(RRev_handle,-20)
+                    time.sleep(0.1)
+                    if ret_green[1] != ret_red[1]:
+                        Rv = float(ret_green[0])-float(ret_red[0])
+                        if Rv&lt;0.0:
+                            speed(RMo_handle,Rv*-0.02)
+                        elif Rv&gt;0.0:
+                            speed(RMo_handle,Rv*-0.02)
+                        else:
+                            pass
+                    else:
+                        speed(RRev_handle,2)
+                    
+                elif ret_green[0] &lt;62.5:
+                    speed(RMo_handle,-2)
+                    time.sleep(0.1)
+                    speed(RRev_handle,-20)
+                    time.sleep(0.1)
+                    if ret_green[1] != ret_red[1]:
+                        Rv = float(ret_green[0])-float(ret_red[0])
+                        if Rv&lt;0.0:
+                            speed(RMo_handle,Rv*-0.02)
+                        elif Rv&gt;0.0:
+                            speed(RMo_handle,Rv*-0.02)
+                        else:
+                            pass
+                    else:
+                        speed(RRev_handle,2)
+            elif ret_green[0]-ret_red[0] &gt;= -3 and ret_green[0]-ret_red[0] &lt;= 3:
+                if RRv&lt;-10.0:
+                    speed(RRev_handle,-2)
+                elif RRv&gt;-10.0:
+                    speed(RRev_handle,2)
+                else:
+                    pass
+                    
+            #'''
       # overlay rectangle marker if something is found by OpenCV
         if ret_green:
             cv2.rectangle(img2,(ret_green[0]-5,ret_green[1]-5), (ret_green[0]+5,ret_green[1]+5), (0x99,0xff,0x33), 1)
@@ -327,8 +401,7 @@ if clientID!=-1:
       print(err)
 else:
   print("Failed to connect to remote API Server")
-  vrep.simxFinish(clientID)</pre>
-<br />Ag3-第十二週-影像辨識尋找球和桿子位置 << <a href='Ag3-第十二週-影像辨識尋找球和桿子位置.html'>Previous</a> <a href='Ag3-第十四週-影像辨識機器對打修正十三週錯誤.html'>Next</a> >> Ag3-第十四週-影像辨識機器對打修正十三週錯誤</div>
+  vrep.simxFinish(clientID)</pre><br />Ag3-第十三週-影像辨識機器對打 << <a href='Ag3-第十三週-影像辨識機器對打.html'>Previous</a> <a href='Ag3-第十四週-更改影像辨識方式.html'>Next</a> >> Ag3-第十四週-更改影像辨識方式</div>
         
     <!-- footer -->
       <div class="container">
