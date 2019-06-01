@@ -57,7 +57,14 @@
 <h2>系統功能展示</h2>
 <p>手足球模擬系統功能展示 (模擬展示與說明影片)</p>
 <h3>Ag3-足球台模擬進度</h3>
-<h4>0506模擬測試</h4>
+<h4>w11</h4>
+<p>這週的進度是分配工作，v-rep 模擬的部分是由陳微云40623105，李如芳40623109，楊秉澤40623118來負責，張華倞40623128（組長）則是幫助我們有困難的地方，幫助我們解決問題。總共分成兩個部分，第一部分是簡化，第二部分是處理樹狀圖加模擬。一開始因為還要設計及畫圖，所以這週整組先一起設計球桌大小及各個零件的大小，並上網查資料再一起討論。</p>
+<p>●若要查看設計尺寸，請看設計與繪圖→零件與尺寸分析 ：<a href="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/content/%E9%9B%B6%E7%B5%84%E4%BB%B6%E5%B0%BA%E5%AF%B8%E5%88%86%E6%9E%90.html">https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/content/%E9%9B%B6%E7%B5%84%E4%BB%B6%E5%B0%BA%E5%AF%B8%E5%88%86%E6%9E%90.html</a></p>
+<h4>w12</h4>
+<p><span>這週的進度是先用之前的圖檔熟悉簡化的操作，並處理樹狀圖，嘗試模擬。</span></p>
+<p><span>將樹狀圖處理好成可以轉動的狀態，但只能轉動不能左右移動，還再進行修改。</span></p>
+<p><span>將軸裝在手柄上，嘗試看看能不能用手柄驅動桿子，進而驅動球員。</span></p>
+<p><span>將人偶簡化，嘗試能不能將桿子和人偶合併再一起簡化。</span></p>
 <p>40623105</p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/QPWfPGLW2BE" width="560"></iframe></p>
 <p></p>
@@ -66,16 +73,18 @@
 <p>40623118</p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/2ZhJYcfZ7ms" width="560"></iframe></p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/InFd99SzftQ" width="560"></iframe></p>
-<h4>0513<span>模擬測試</span></h4>
+<h4>w13</h4>
+<p>這週因為繪圖組的還需要時間畫圖，所以仍然用舊的圖檔進行簡化跟模擬。</p>
+<p>將球桌簡化，把球門的部分分開來建模，否則形狀會很奇怪，插入桿子的部分，因為洞口的關係，簡化會變得比較複雜，要經過建模變成一體的比較好操作。</p>
+<p>處理樹狀圖，插入軸後，要讓手柄，桿子，及人偶一起連動，並能左右移動。但是出現了會一起掉落的問題，仍在處理中。</p>
 <p>40623105</p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/hDOCdXlDlfs" width="560"></iframe></p>
 <p>40623109</p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/CCFIQs34HnI" width="560"></iframe></p>
 <p>40623118</p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/jLj4x16FeSg" width="560"></iframe></p>
-<h4>0520<span>模擬測試</span></h4>
+<h4></h4>
 <p>40623105</p>
-<p>尺寸限制</p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/A3jjC_93hVw" width="560"></iframe></p>
 <p>40623109</p>
 <p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="//www.youtube.com/embed/VtadsM_6xEs" width="560"></iframe></p>
@@ -772,7 +781,7 @@ if clientID!=-1:
 else:
   print("Failed to connect to remote API Server")
   vrep.simxFinish(clientID)</pre>
-<p></p><h3>第十五週-影像辨識多個球員踢球</h3>
+<p></p><h3>Ag3-第十五週-影像辨識多個球員踢球</h3>
 <p>判斷第二根桿子上兩個球員誰距離球比較近，會利用較近的球員去踢球。</p>
 <p>由於影像輸出後要進行運算，要花費一段時間(可以看影片中的上下兩台攝影機的延遲看出)，</p>
 <p>所以模擬速度如果調整過快會導致判斷錯誤。</p>
@@ -1167,8 +1176,7 @@ if clientID!=-1:
 else:
   print("Failed to connect to remote API Server")
   vrep.simxFinish(clientID)</pre>
-<p></p>
-<h1>結案報告</h1>
+<p></p><h1>結案報告</h1>
 <h2>專案口頭簡報</h2>
 <p>各組利用倉儲中的 Reveal.js 進行結案簡報 (結案口頭簡報)</p>
 <h2>專案報告書</h2>
