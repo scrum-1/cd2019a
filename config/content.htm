@@ -294,8 +294,45 @@
 <p>3D 零組件爆炸圖</p>
 <h4></h4>
 <h1>V-rep 動態模擬</h1>
-<p></p>
-<h2>送球機構設計與模擬</h2>
+<p><span>人物簡化</span></p>
+<p>軸、篩子簡化</p>
+<p>足球桌簡化</p>
+<p><span style="background-color: #f0fc65;">模擬步驟</span></p>
+<p>將所有物件都簡化好後，開始進入模擬的步驟，為了在<a href="http://www.coppeliarobotics.com/helpFiles/en/userInterface.htm">場景層次結構</a>中的物件更好找到，將所有的物件都命名能更快的找的所需要使用的物件。首先先加入平移軸<a href="http://www.coppeliarobotics.com/helpFiles/en/jointDescription.htm">Prismatic joints</a> (使用[Add--&gt;Joint--&gt;Prismatic])及旋轉軸<a href="http://www.coppeliarobotics.com/helpFiles/en/jointDescription.htm">Revolute joints</a> (使用[Add--&gt;Joint--&gt;Revolute])，並分別命名為 Prismatic_joint_1 及 Revolute_joint_1 ，之後將所有我需要用的物件都拉到 Table_dyn 下，如圖4.1及圖4.2。</p>
+<p>圖4.1：將所需物件拉入 Table_dyn 下-1</p>
+<p><img alt="" height="253" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/6.png" width="282"/></p>
+<p>圖4.2：將所需物件拉入 Table_dyn 下-2</p>
+<p><img caption="false" height="443" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/6-1.png" width="900"/></p>
+<p>選取 Prismatic_joint_1 (平移軸)及 cylinder_L1_dyn (軸)並點選物件傳送工具欄按鈕如圖x . x，會出現 Object/Item Translation/Position的對話框，切換至 Postion 按下按鈕 Apply to selection ，平移軸及軸會相貼合，如圖4.3，再點選<a href="http://www.coppeliarobotics.com/helpFiles/en/orientationDialog.htm">物件旋轉工具欄按鈕</a>圖4.4，會出現 Object/Item Rotation/Orientation的對話框，切換至 Orientation 按下按鈕Apply to selection ，平移軸及軸方向會相同，如圖4.5，之後的旋轉軸也是一樣的方法，圖4.6可以看出平移軸、旋轉軸及軸位置及方向都相同。</p>
+<p>圖4.3：平移軸和軸相貼合</p>
+<p><img alt="" height="312" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/7-3.png" width="323"/></p>
+<p>圖4.4：物件旋轉工具欄按鈕][8-1]</p>
+<p><img alt="" height="57" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/8-1.png" width="43"/></p>
+<p>圖4.5：平移軸和軸方向相同</p>
+<p><img alt="" height="288" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/8-3.png" width="279"/></p>
+<p>圖4.6：平移軸、旋轉軸及軸位置及方向皆一致</p>
+<p><img alt="" height="239" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/10-3.png" width="158"/></p>
+<p>再將拉入 Table_dyn下的物件依照圖4.7 去排序，在選取物件 h_L1、 people_L1_1 、 s_L1_1 及 s_L1_2 (使用[Edit--&gt;Grouping/Merging--&gt;Group selected shapes])將物件合併，命名為 h_L1 ，另一部分的 people_L1_1_dyn 、 s_L1_1_dyn 及 s_L1_2_dyn 也一樣使用相同方法進行合併，命名為 s_L1_2_dyn ，完成後如圖4.8。</p>
+<p>圖：4.7樹狀圖排列</p>
+<p><img alt="" height="239" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/11.png" width="277"/></p>
+<p>圖4.8：合併並排列好</p>
+<p><img alt="" height="148" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/14-1.png" width="281"/></p>
+<p>之後點擊兩次 Table_dyn 前的圖案，會產生 Scene Object Properties 點選 common ，將 Visibility 下的 Camera visibility layers 中的勾勾關掉，如圖4.9，將 s_L1_2_dyn 及 cylinder_L1_dyn 也使用相同方式關閉圖層。<span> </span><br/><br/>圖4.9：Scene Object Properties 對話框</p>
+<p><img caption="false" height="488" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/15-2.png" width="300"/></p>
+<p>點擊兩次 Table_dyn 前的圖案，並點及對話框中的 Show dynamic properties dialog，會出現另一個 Rigid Body Dynamic Properties 對話框，將 Body is respondable 打勾，再將 Local respondable mask 從第3個勾開始不打勾到第8個，如圖4.10；再來點擊兩次 cylinder_L1_dyn 前的圖案，依照圖4.11去進行勾選，其中打開 Body is dynamic 能使物體產生動態；再點擊兩次 s_L1_2_dyn 前的圖案，依照圖4.12 去進行勾選。</p>
+<p>圖4.10：對話框勾選 - Table_dyn</p>
+<p><img caption="false" height="472" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/17-4.png" width="300"/></p>
+<p>圖4.11：對話框勾選 - cylinder_L1_dyn</p>
+<p><img alt="" height="472" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/18-2.png" width="300"/></p>
+<p>圖4.12：對話框勾選 - s_L1_2_dyn</p>
+<p><img alt="" height="472" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/19-2.png" width="300"/></p>
+<p>接下來要讓軸能轉動，所以點擊兩次 Prismatic_joint_1 前的圖案，在按下 Show dynamic properties dialog ，會產生 Joint Dynamic Properties 將 Motor properties 下的 Motor enabled 打勾，在 Target velocity 打入0.001，如圖4.13 所展示；再來點擊兩次 Revolute_joint_1 前的圖案，在按下 Show dynamic properties dialog ，會產生 Joint Dynamic Properties 將 Motor properties 下的 Motor enabled 打勾，在 Target velocity 打入1，如圖4.14，最後看圖4.15 可以看到模擬。</p>
+<p>圖4.13：對話框勾選 - Prismatic_joint_1</p>
+<p><img alt="" height="392" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/20-2.png" width="300"/></p>
+<p>圖4.14：對話框勾選 - Revolute_joint_1</p>
+<p><img caption="false" height="392" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/21-2.png" width="300"/></p>
+<p>圖4.15：模擬圖</p>
+<p><img caption="false" height="579" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/22.png" width="900"/></p><h2>送球機構設計與模擬</h2>
 <h4><strong>AG1</strong></h4>
 <p></p>
 <hr/>
