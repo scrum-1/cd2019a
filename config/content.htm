@@ -346,6 +346,12 @@
 <p><img caption="false" height="268" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/%E8%BB%B8%E7%B0%A1%E5%8C%965.png" width="300"/></p>
 <p><span>圖2.3：</span>軸簡化後產生的新圓柱</p>
 <p><img caption="false" height="292" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/%E8%BB%B8%E7%B0%A1%E5%8C%96%E5%BE%8C%E7%9A%84%E5%9C%93%E6%9F%B1.png" width="550"/></p>
+<p>接下來要進行篩子的簡化，複製篩子至新的場景，之後的簡化也和軸非常相似，選取篩子並點選形狀編輯模式工具欄按鈕，將篩子全部框選進行簡化，如圖2.4，再點選簡化的對話框 Operations on selected triangles 中的 Extract cylinder ，之後會出現 Primitive cylinder 的對話框並按下 OK 即會產生一個圓柱如圖2.5，將新圓柱物件命名為 s1_dyn，並剪下貼回第一場景上即可。</p>
+<p>圖2.4：框選篩子需簡化部分</p>
+<p><img alt="" height="154" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/%E7%AF%A9%E5%AD%90%E7%B0%A1%E5%8C%963.png" width="200"/></p>
+<p>圖2.5：篩子簡化後產生的新物件</p>
+<p><img alt="" height="184" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/%E7%AF%A9%E5%AD%90%E7%B0%A1%E5%8C%96%E5%BE%8C%E7%94%A2%E7%94%9F%E7%9A%84%E6%96%B0%E7%89%A9%E4%BB%B6.png" width="200"/></p>
+<p>其餘的篩子及軸的簡化，可以參考人物簡化的最後一段。</p>
 <p>足球桌簡化</p>
 <p><span style="background-color: #f0fc65;">模擬步驟</span></p>
 <p>將所有物件都簡化好後，開始進入模擬的步驟，為了在<a href="http://www.coppeliarobotics.com/helpFiles/en/userInterface.htm">場景層次結構</a>中的物件更好找到，將所有的物件都命名能更快的找的所需要使用的物件。首先先加入平移軸<a href="http://www.coppeliarobotics.com/helpFiles/en/jointDescription.htm">Prismatic joints</a> (使用[Add--&gt;Joint--&gt;Prismatic])及旋轉軸<a href="http://www.coppeliarobotics.com/helpFiles/en/jointDescription.htm">Revolute joints</a> (使用[Add--&gt;Joint--&gt;Revolute])，並分別命名為 Prismatic_joint_1 及 Revolute_joint_1 ，之後將所有我需要用的物件都拉到 Table_dyn 下，如圖4.1及圖4.2。</p>
