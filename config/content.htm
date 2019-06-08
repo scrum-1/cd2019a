@@ -294,8 +294,58 @@
 <p>3D 零組件爆炸圖</p>
 <h4></h4>
 <h1>V-rep 動態模擬</h1>
-<p><span>人物簡化</span></p>
-<p>軸、篩子簡化</p>
+<p><span style="background-color: #ffff00;"> 人物簡化</span></p>
+<p>首先在 onshape 將想要使用的零件圖或組合圖按照圖 1.1 及圖 1.2 匯出成 .stl 檔，再從 v-rep 中開啟 .stl 檔(使用[ File --&gt; Import --&gt; Mash... ])，會出現如圖 1.3 的對話框，依據個人所需去做點選，在按 OK 即可在視窗中導入模型。可以從圖 1.4 中看出，導入的模型是未分離的模型(如若是零件圖則不須此步驟)，所以我們使用[ Edit --&gt; Grouping/Merging --&gt; Divide selected shapes ]來將模型中的物件全都爆開，如圖 1.5。</p>
+<p>圖1.1：onshape匯出</p>
+<p><img alt="" height="259" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/onshape%E5%8C%AF%E5%87%BA1.png" width="550"/></p>
+<p><span>圖1.2：</span>onshape匯出對話框</p>
+<p><img caption="false" height="387" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/onshape%E5%8C%AF%E5%87%BA2.png" width="400"/></p>
+<p><span>圖1.3：</span>匯入 .STL 檔後的對話框</p>
+<p><img alt="" height="262" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/%E9%96%8B%E5%95%9Fstl%E6%AA%94%E6%A1%882.png" width="200"/></p>
+<p><span>圖1.4：</span>分離模型步驟點選</p>
+<p><img alt="" height="399" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/%E7%88%86%E9%96%8B1.png" width="550"/></p>
+<p><span>圖1.5：</span>模型爆開後</p>
+<p><img alt="" height="270" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/%E7%88%86%E9%96%8B2.png" width="550"/></p>
+<p>接下來說明人物簡化步驟，先來進行人物頭部的簡化，先選擇人物將其複製(使用[ Edit --&gt; Copy selected Objects ])到一個新建的場景(使用[ File --&gt; New scene ])，再將人物貼上(使用[ Edit --&gt; Paste buffer ])。再點選<a href="http://www.coppeliarobotics.com/helpFiles/en/pagesAndViews.htm">頁面選擇器工具欄按鈕</a> ，如圖1.6，使得在簡化的過程中更容易點選，接著選取人物再點選 <a href="http://www.coppeliarobotics.com/helpFiles/en/shapeEditModes.htm">形狀編輯模式工具欄按鈕</a> 來進行簡化，如圖1.7，在此我框選人物的頭部如圖1.8，再點選簡化的對話框 Operations on selected triangles 中的 Extract cuboid 如圖1.9，之後會出現 Primitive cuboid 的對話框並按下 OK 即會產生一個立方體如圖1.10，頭部的簡化就完成了，再將簡化對話框關閉，此時會出現 Shape edit mode 對話框詢問是否應用這些變化嗎？(點擊否會保<br/>留提取的對象)，所以在這選擇 No 將新加入的物件保留。</p>
+<p><span>圖1.6：</span>頁面選擇器工具欄按鈕</p>
+<p><img caption="false" height="56" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/%E4%BA%BA%E7%89%A9%E7%B0%A1%E5%8C%964.png" width="42"/></p>
+<p><span>圖1.7：</span>形狀編輯模式工具欄按鈕</p>
+<p><img alt="" height="56" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/%E4%BA%BA%E7%89%A9%E7%B0%A1%E5%8C%966.png" width="42"/></p>
+<p><span>圖1.8：</span>框選人物頭部</p>
+<p><img alt="" height="177" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/%E4%BA%BA%E7%89%A9%E7%B0%A1%E5%8C%967.png" width="200"/></p>
+<p><span>圖1.9：</span>簡化的對話框 - 人物</p>
+<p><img alt="" height="269" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/%E4%BA%BA%E7%89%A9%E7%B0%A1%E5%8C%969.png" width="300"/></p>
+<p><span>圖1.10：</span>頭部簡化完成後</p>
+<p><img alt="" height="225" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/%E4%BA%BA%E7%89%A9%E7%B0%A1%E5%8C%9611.png" width="200"/></p>
+<p>再來要說明人物身體的簡化，其簡化步驟和人物頭部簡化很相似，所以直接跳至身體簡化所需框選的部位如圖1.11，之後再點選簡化的對話框 Operations on selected triangles 中的 Extract cuboid 如圖1.9，身體簡化完的圖片如圖1.12。</p>
+<p><span>圖1.11：</span>框選人物頭部以下的部位</p>
+<p><img caption="false" height="306" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/%E4%BA%BA%E7%89%A9%E4%BF%9D%E7%95%991-15.png" width="200"/></p>
+<p><span>圖1.12：</span>頭部簡化完成後</p>
+<p><img alt="" height="270" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/%E4%BA%BA%E7%89%A9%E7%B0%A1%E5%8C%9616.png" width="550"/></p>
+<p>人物的簡化就到這，接著要將兩個新增的物件合併成一個全新的物件，先將兩個物件選取(使用[ Edit --&gt; Grouping/Merging --&gt; Group selected shapes ])，如圖1.13，新物件的名稱為 people_dyn ，之後在剪下貼回第一個場景，如圖1.14。</p>
+<p><span>圖1.13：</span>合併物件</p>
+<p><img caption="false" height="270" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/%E4%BA%BA%E7%89%A9%E7%B0%A1%E5%8C%9617.png" width="400"/></p>
+<p><span>圖1.14：</span>新物件people_dyn新加並貼回原位</p>
+<p><img alt="" height="270" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/%E4%BA%BA%E7%89%A9%E7%B0%A1%E5%8C%9621.png" width="550"/></p>
+<p>其餘人物的簡化可以使用複製將剛剛簡化後的新物件複製在貼上，如圖1.15，之後點選新貼上的物件使用 Ctrl 在選取其他尚未簡化的一個人物，如圖1.16，點擊操作<a href="http://www.coppeliarobotics.com/helpFiles/en/positionDialog.htm">物件傳送工具欄按鈕</a> 如圖1.17，會出現工具欄按鈕對話框，如圖1.18，點選 Postion 中的 Apply to selection 使新貼上的物件能和為簡化的人物箱貼合，如圖1.19，這樣就無需再簡化無限多次。</p>
+<p>!<span>圖1.15：</span>合併物件</p>
+<p><img alt="" height="50" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/%E8%A4%87%E8%A3%BD%E7%B0%A1%E5%8C%96%E4%B8%A6%E8%B2%BC%E4%B8%8A1.png" width="200"/></p>
+<p><span>圖1.16：</span>使用ctrl在點擊工具欄按鈕</p>
+<p><img caption="false" height="239" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/%E8%A4%87%E8%A3%BD%E7%B0%A1%E5%8C%96%E4%B8%A6%E8%B2%BC%E4%B8%8A2-1.png" width="200"/></p>
+<p><span>圖1.17：</span>物件傳送工具欄按鈕</p>
+<p><img alt="" height="68" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/7-1.png" width="42"/></p>
+<p><span>圖1.18：</span>工具欄按鈕對話框</p>
+<p><img caption="false" height="164" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/%E8%A4%87%E8%A3%BD%E7%B0%A1%E5%8C%96%E4%B8%A6%E8%B2%BC%E4%B8%8A3.png" width="300"/></p>
+<p><span>圖1.19：</span>貼完後</p>
+<p><img caption="false" height="313" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/%E8%A4%87%E8%A3%BD%E7%B0%A1%E5%8C%96%E4%B8%A6%E8%B2%BC%E4%B8%8A4.png" width="200"/></p>
+<p><span style="background-color: #ffff00;">軸、篩子簡化</span></p>
+<p>在來先進行軸的簡化，複製軸到新的場景，選取軸並點選形狀編輯模式工具欄按鈕，如圖1.7，將軸全部框選，如圖2.1，再點選簡化的對話框 Operations on selected triangles 中的 Extract cylinder 如圖2.2，之後會出現 Primitive cylinder 的對話框並按下 OK 即會產生一個圓柱如圖2.3，將新圓柱物件命名為 Cylinder_dyn，並剪下貼回第一場景上即可。</p>
+<p><span>圖2.1：</span>框選軸需簡化的部分</p>
+<p><img alt="" height="193" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/%E8%BB%B8%E7%B0%A1%E5%8C%963.png" width="200"/></p>
+<p><span>圖2.2：</span>簡化對話框 - 軸</p>
+<p><img caption="false" height="268" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/%E8%BB%B8%E7%B0%A1%E5%8C%965.png" width="300"/></p>
+<p><span>圖2.3：</span>軸簡化後產生的新圓柱</p>
+<p><img caption="false" height="292" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/%E8%BB%B8%E7%B0%A1%E5%8C%96%E5%BE%8C%E7%9A%84%E5%9C%93%E6%9F%B1.png" width="550"/></p>
 <p>足球桌簡化</p>
 <p><span style="background-color: #f0fc65;">模擬步驟</span></p>
 <p>將所有物件都簡化好後，開始進入模擬的步驟，為了在<a href="http://www.coppeliarobotics.com/helpFiles/en/userInterface.htm">場景層次結構</a>中的物件更好找到，將所有的物件都命名能更快的找的所需要使用的物件。首先先加入平移軸<a href="http://www.coppeliarobotics.com/helpFiles/en/jointDescription.htm">Prismatic joints</a> (使用[Add--&gt;Joint--&gt;Prismatic])及旋轉軸<a href="http://www.coppeliarobotics.com/helpFiles/en/jointDescription.htm">Revolute joints</a> (使用[Add--&gt;Joint--&gt;Revolute])，並分別命名為 Prismatic_joint_1 及 Revolute_joint_1 ，之後將所有我需要用的物件都拉到 Table_dyn 下，如圖4.1及圖4.2。</p>
