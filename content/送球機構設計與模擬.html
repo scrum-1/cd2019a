@@ -149,6 +149,41 @@ init_mathjax();
         </header>
     <div id="tipue_search_content">V-rep 動態模擬 << <a href='V-rep 動態模擬.html'>Previous</a> <a href='系統功能展示.html'>Next</a> >> 系統功能展示<br /><h1>送球機構設計與模擬</h1>
 <h4><strong>AG1</strong></h4>
+<p><strong>Week 11-12</strong></p>
+<p>如何將球從球門到中場，經過討論後，想說在進門後直接將球丟回中場去，但這種做法會增加寫程式的困擾，後來就想說改成直接帶回中場，以爪子的方式，將球從球門那裡運送到中場，所以就畫了一組爪子的機構，但最後放置在球門旁時，因為長度不夠，若要再改長度的話，此機構可能就無法運行，再加上運送的過程中，無法保證球不會掉，或是未能想到說要多加東西讓球從爪子上回到球場，所以就放棄了此機構。</p>
+<p>之後我們分成兩小組去構想送球機構</p>
+<p><a href="https://cad.onshape.com/documents/8331b9b07a0a7ae372f70c13/w/0490dbac8618e3b64da12c3b/e/ca10ccaf65816fcde2a79990">丟球爪子</a></p>
+<p><strong>Week 12-13</strong></p>
+<p><span>經過第一次的送球機構思考後，我們決定讓進球門的球運送至高處，再以軌道高低差的方式，讓球自然滾入場內，因時間的關係，分成兩小組一起繪製，再決定最終版。</span></p>
+<p>方法一</p>
+<p><span>以上學期的鋼球運動系統為出發點，想畫出一個類似摩天輪的東西，就是</span>以圓盤旋轉的方式，將球從低處運送到高處。</p>
+<p><a href="https://cad.onshape.com/documents/9bbb227b2f8cbd870dfae2fe/w/953be7667d0709a68543d38e/e/83004b1b55dc1c27a9405b6e">送球機構(圓盤)</a></p>
+<p><a href="https://cad.onshape.com/documents/9bbb227b2f8cbd870dfae2fe/w/953be7667d0709a68543d38e/e/886e0c300db2e84349e7a5aa">球檯與軌道(圓盤)</a></p>
+<p><strong>送球機構(圓盤)模擬-1</strong></p>
+<p>模擬的時候，球會滾入圓盤的洞裡，但還沒轉上去，就會掉出來。</p>
+<p><iframe allowfullscreen="allowfullscreen" data-mce-fragment="1" height="314" src="https://www.youtube.com/embed/AG8FBzkl7Bs" width="560"></iframe></p>
+<p><strong>送球機構(圓盤)模擬-2</strong></p>
+<p><strong><iframe allowfullscreen="allowfullscreen" data-mce-fragment="1" height="314" src="https://www.youtube.com/embed/qIfVnJPzGJk" width="560"></iframe></strong></p>
+<p>方法二</p>
+<p>後來想到可以以摩天輪的想法與丟球爪子合體，所以在設計時，加入了爪子的形式。畫完此一小機構後，運作起來的感覺還不錯，所以就決定用它，但還必須加上軌道，而軌道在畫製時，必須思考如何傾斜才能使球順利地滾入場地，還有在拿球與放球時的軌道設計須配合運轉機構的爪子。</p>
+<p><a href="https://cad.onshape.com/documents/8331b9b07a0a7ae372f70c13/w/0490dbac8618e3b64da12c3b/e/7e4e0ddf9347cd031021cca6">送球機構(爪子)</a></p>
+<p>一開始畫完的軌道，加上上一個小機構一起放入Vrep模擬時，會卡在一個地方就是將球送上去後，滑落到轉角就會卡住，於是我們就在轉角加一塊三角形擋板，讓球會因三角形的斜面而往下走。</p>
+<p><a href="https://cad.onshape.com/documents/4379b59c90b3aa52cab774e7/w/8754f7b90eaf9e4f33731814/e/6a15cd0263ff93507865b712">球檯與軌道(爪子)</a></p>
+<p><strong>初步模擬的送球機構</strong></p>
+<p><iframe allowfullscreen="allowfullscreen" data-mce-fragment="1" height="314" src="https://www.youtube.com/embed/PBn6jBKGlSg" width="520"></iframe></p>
+<p>總結:</p>
+<p>因為方法一圓盤送球機構的還是有一點點小問題，而方法二的整體看起來，已經可以順利運作，所以最後以方法二為最終版本。</p>
+<p><strong>Week 14-15</strong></p>
+<p>手足球球檯與送球機構設計完之後進行模擬，尋找哪裡零組件有干涉的問題；或者軌道傳送球時，球在哪裡會卡住，並返回onshape重新更改尺寸，再匯入至V-rep再次進行模擬。</p>
+<p><iframe allowfullscreen="allowfullscreen" data-mce-fragment="1" height="314" src="https://www.youtube.com/embed/CO5Xx6sN-Kc" width="520"></iframe></p>
+<p><strong>問題與解決</strong></p>
+<p>Q1. 球與軌道發生干涉</p>
+<p>Q2. 球機率性卡在軌道轉角</p>
+<p><iframe allowfullscreen="allowfullscreen" data-mce-fragment="1" height="314" src="https://www.youtube.com/embed/5FIVwJQlr00" width="520"></iframe></p>
+<p><strong>解決</strong></p>
+<p>A1. 調整軌道與桿子的高度，並修改球員的高度，確保能夠踢到球</p>
+<p>A2. 在轉角處新增一個軌道，能夠讓球順著軌道行走</p>
+<p><iframe allowfullscreen="allowfullscreen" data-mce-fragment="1" height="314" src="https://www.youtube.com/embed/79VijDy_yu8" width="560"></iframe></p>
 <p></p>
 <hr/>
 <h4><strong>AG2</strong></h4>
@@ -272,8 +307,7 @@ init_mathjax();
 <p></p>
 <hr/>
 <h4><strong>AG6</strong></h4>
-<p></p>
-<br />V-rep 動態模擬 << <a href='V-rep 動態模擬.html'>Previous</a> <a href='系統功能展示.html'>Next</a> >> 系統功能展示</div>
+<p></p><br />V-rep 動態模擬 << <a href='V-rep 動態模擬.html'>Previous</a> <a href='系統功能展示.html'>Next</a> >> 系統功能展示</div>
         
     <!-- footer -->
       <div class="container">
