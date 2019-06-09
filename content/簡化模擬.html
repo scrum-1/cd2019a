@@ -136,7 +136,7 @@ init_mathjax();
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='各組期末報告說明.html'>各組期末報告說明</a><li class='has-children'><a href='執行規劃.html'>執行規劃</a><ul class='dropdown'><li><a href='手足球系統模擬.html'>手足球系統模擬</a></li></ul><li class='has-children'><a href='設計與繪圖.html'>設計與繪圖</a><ul class='dropdown'><li><a href='零組件尺寸分析.html'>零組件尺寸分析</a><li><a href='細部設計與 BOM.html'>細部設計與 BOM</a></li></ul><li class='has-children'><a href='V-rep 動態模擬.html'>V-rep 動態模擬</a><ul class='dropdown'><li><a href='問題和討論.html'>問題和討論</a><li><a href='簡化模擬.html'>簡化模擬</a><li><a href='送球機構設計與模擬.html'>送球機構設計與模擬</a><li><a href='設計與模擬影片.html'>設計與模擬影片</a><li class='has-children'><a href='系統功能展示.html'>系統功能展示</a><ul class='dropdown'><li><a href='手足球雙人鍵盤對打.html'>手足球雙人鍵盤對打</a><li><a href='手足球手控與電腦對打.html'>手足球手控與電腦對打</a><li><a href='手足球電腦與電與對打.html'>手足球電腦與電與對打</a><li><a href='模擬問題與討論.html'>模擬問題與討論</a></li></li></ul></ul><li class='has-children'><a href='總結報告.html'>總結報告</a><ul class='dropdown'><li><a href='專案口頭簡報.html'>專案口頭簡報</a><li class='has-children'><a href='專案報告書.html'>專案報告書</a><ul class='dropdown'><li><a href='如何編輯報告書.html'>如何編輯報告書</a></li>
+                     <li><a href='各組期末報告說明.html'>各組期末報告說明</a><li class='has-children'><a href='執行規劃.html'>執行規劃</a><ul class='dropdown'><li><a href='手足球系統模擬.html'>手足球系統模擬</a></li></ul><li class='has-children'><a href='設計與繪圖.html'>設計與繪圖</a><ul class='dropdown'><li><a href='零組件尺寸分析.html'>零組件尺寸分析</a><li><a href='參數設計與繪圖.html'>參數設計與繪圖</a><li><a href='細部設計與 BOM.html'>細部設計與 BOM</a></li></ul><li class='has-children'><a href='V-rep 動態模擬.html'>V-rep 動態模擬</a><ul class='dropdown'><li><a href='問題和討論.html'>問題和討論</a><li><a href='簡化模擬.html'>簡化模擬</a><li><a href='送球機構設計與模擬.html'>送球機構設計與模擬</a><li><a href='設計與模擬影片.html'>設計與模擬影片</a><li class='has-children'><a href='系統功能展示.html'>系統功能展示</a><ul class='dropdown'><li><a href='手足球雙人鍵盤對打.html'>手足球雙人鍵盤對打</a><li><a href='手足球手控與電腦對打.html'>手足球手控與電腦對打</a><li><a href='手足球電腦與電與對打.html'>手足球電腦與電與對打</a><li><a href='模擬問題與討論.html'>模擬問題與討論</a></li></li></ul></ul><li class='has-children'><a href='總結報告.html'>總結報告</a><ul class='dropdown'><li><a href='專案口頭簡報.html'>專案口頭簡報</a><li class='has-children'><a href='專案報告書.html'>專案報告書</a><ul class='dropdown'><li><a href='如何編輯報告書.html'>如何編輯報告書</a></li>
                       </ul>
                 </nav>
               </div>
@@ -149,15 +149,23 @@ init_mathjax();
         </header>
     <div id="tipue_search_content">問題和討論 << <a href='問題和討論.html'>Previous</a> <a href='送球機構設計與模擬.html'>Next</a> >> 送球機構設計與模擬<br /><h1>簡化模擬</h1>
 <p>首先在<span> onshape </span>將想要使用的零件圖或組合圖按照如下圖</p>
+<p><img alt="" height="208" src="https://i.imgur.com/uT7tl4y.png" width="362"/></p>
 <p>匯出成<span>.stl </span>檔，再至<span>v-rep </span>中開啟<span>.stl </span>檔<span> </span>使用<span> [File</span>–<span>&gt;Import</span>–<span>&gt;Mash</span>…<span>]</span>，如下圖</p>
+<p><img alt="" height="266" src="https://i.imgur.com/cwEErWA.png" width="202"/></p>
 <p>依據個人所需去做點選，在按<span> OK </span>即可在視窗中導入模型。可以從下圖中看出</p>
+<p><img alt="" height="302" src="https://i.imgur.com/xamLfzx.png" width="676"/></p>
 <p>導入的模型是未分離的模型<span> (</span>如若是零件圖則不須此步驟<span>)</span>，</p>
 <p>所以我們使用  [Edit–<span>&gt;Grouping/Merging</span>–<span>&gt;Divideselectedshapes]  </span>來將模型中的物件全都爆開，如下圖</p>
+<p><img alt="" height="323" src="https://i.imgur.com/ylZoz7T.png" width="637"/></p>
 <p>接下來說明桌檯簡化步驟</p>
 <p><span>1 .<span>使用</span><span>[File</span><span>–</span><span>&gt;Newscene] 建立新的檔案<span color="#00000B" style="color: #00000b;">，</span><span color="#FF00FF" style="color: #ff00ff;"><span lang="EN-US"><span> </span></span></span>然後</span></span>使用 <span>[Edit&gt;CopyselectedObjects] </span>到一個新建的場景<span>。</span></p>
 <p>2 . 將人物貼上<span> </span>使用 <span> [Edit </span>–<span>&gt; Paste buffer]</span>。</p>
-<p>再點選簡化 的對話框 <span>Operations on selected triangles </span>中的<span> Extract cuboid </span>如下圖</p>
+<p>3 . 點選頁面選擇器工具欄按鈕 ，如圖<img alt="" height="56" src="https://i.imgur.com/qvW77K2.png" width="63"/><span>，使得在簡化的過程中更容易點選</span></p>
+<p>4.<span>4 . 選取桌檯再點選形狀編輯模式工具欄按鈕來進行簡化如<img alt="" height="64" src="https://i.imgur.com/mCeIfk4.png" width="51"/></span>再點選簡化 的對話框 <span>Operations on selected triangles </span>中的<span> Extract cuboid </span>如下圖</p>
+<p><img alt="" height="307" src="https://i.imgur.com/WaI1ars.png" width="338"/></p>
+<p></p>
 <p>5 . 之後會出現<span> Primitive cuboid </span>的對話框並按下<span> OK </span>即會產生一個立方體如下圖</p>
+<p><img alt="" height="342" src="https://i.imgur.com/a9hripx.png" width="488"/></p>
 <p>桌檯的簡化 就完成了<span><span color="#00000B" style="color: #00000b;">！</span></span><span color="#FF00FF" style="color: #ff00ff;"><span lang="EN-US"><span> </span></span></span></p>
 <p>簡化示範影片<span><span color="#00000B" style="color: #00000b;">：</span></span><span color="#FF00FF" style="color: #ff00ff;"><span lang="EN-US"><span> </span></span></span></p>
 <p><span color="#FF00FF" style="color: #ff00ff;"><span lang="EN-US"><span><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/nlnmwvENZlE" width="560"></iframe></span></span></span></p>
