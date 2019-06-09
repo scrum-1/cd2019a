@@ -207,6 +207,42 @@ init_mathjax();
 <p><img alt="" height="184" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/%E7%AF%A9%E5%AD%90%E7%B0%A1%E5%8C%96%E5%BE%8C%E7%94%A2%E7%94%9F%E7%9A%84%E6%96%B0%E7%89%A9%E4%BB%B6.png" width="200"/></p>
 <p>其餘的篩子及軸的簡化，可以參考人物簡化的最後一段。</p>
 <p>足球桌簡化</p>
+<p>影片簡易版</p>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/YmQlG03cHHk" width="560"></iframe></p>
+<p>Toggle shape edit mode(左六)僅對於"一個"物體作簡化形成多個三角形</p>
+<p>先開啟另一個New scene，將球桌複製過來做簡化。</p>
+<p>球桌長板子有兩種方式，按Toggle shape edit mode後，</p>
+<p>1.為選取所想要的平面(可不須全選)，選取四角後按Extract cuboid後(系統會將所選所有三角形自動計算出最大尺寸)。</p>
+<p>選取三角形後按Extract cuboid</p>
+<p><img alt="" height="734" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/01vrep_bCCda9LjkF.png" width="1360"/></p>
+<p>OK</p>
+<p><img alt="" height="261" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/03vrep_ppSOMPNriG.png" width="381"/></p>
+<p>關閉Shape Edition後按 NO</p>
+<p><img alt="" height="734" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/02vrep_RmP1pLfqp9.png" width="1360"/></p>
+<p><br/>Scene objects properties(左二)&gt;Shape&gt;View/modify geometry&gt;Keep proportions取消勾選，在Bounding box size長厚度後，在Object/item shift(上七)座移動，與球桌對齊。</p>
+<p>View/modify geometry</p>
+<p><img alt="" height="734" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/04vrep_6CBLXrMxxk.png" width="1360"/></p>
+<p>取消勾選並調整板厚</p>
+<p><img alt="" height="453" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/05.png" width="349"/></p>
+<p>X方向調整</p>
+<p><img alt="" height="734" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/06vrep_Mhr4H2vVfE.png" width="1360"/></p>
+<p>調整位置</p>
+<p><img alt="" height="768" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/07OsZIho157g.png" width="1360"/></p>
+<p></p>
+<p>2.為選取所想要的平面(可不須全選)，選取四角後"再選取平面上方三角形(厚度)"Extract cuboid後(系統會將所選所有三角形自動計算出最大尺寸)，就完成了。</p>
+<p>多選取板厚的三角形</p>
+<p><img alt="" height="734" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/08vrep_V9xQmjrfqx.png" width="1360"/></p>
+<p>選取完後一樣按Extract cuboid&gt;OK&gt;關閉Shape Edition&gt;NO</p>
+<p>兩種方式厚度比較</p>
+<p><img alt="" height="734" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/09vrep_NK3aZ9CqGA.png" width="1360"/></p>
+<p>其他地方的板子操作也是如此，之後會發現板子相互干涉，但對模擬或是簡化不會有影響。</p>
+<p>簡化後的板子相互干涉</p>
+<p><img alt="" height="734" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/10vrep_45niDCVb7M.png" width="1360"/></p>
+<p>**</p>
+<p>Extract shape 為類似像皮膚一樣的一層</p>
+<p>Extract cuboid 為長平板</p>
+<p>Extract cylinder 為長圓柱</p>
+<p>Extract sphere 為長球</p>
 <p><span style="background-color: #f0fc65;">模擬步驟</span></p>
 <p>將所有物件都簡化好後，開始進入模擬的步驟，為了在<a href="http://www.coppeliarobotics.com/helpFiles/en/userInterface.htm">場景層次結構</a>中的物件更好找到，將所有的物件都命名能更快的找的所需要使用的物件。首先先加入平移軸<a href="http://www.coppeliarobotics.com/helpFiles/en/jointDescription.htm">Prismatic joints</a> (使用[Add--&gt;Joint--&gt;Prismatic])及旋轉軸<a href="http://www.coppeliarobotics.com/helpFiles/en/jointDescription.htm">Revolute joints</a> (使用[Add--&gt;Joint--&gt;Revolute])，並分別命名為 Prismatic_joint_1 及 Revolute_joint_1 ，之後將所有我需要用的物件都拉到 Table_dyn 下，如圖4.1及圖4.2。</p>
 <p>圖4.1：將所需物件拉入 Table_dyn 下-1</p>
@@ -242,7 +278,8 @@ init_mathjax();
 <p>圖4.14：對話框勾選 - Revolute_joint_1</p>
 <p><img caption="false" height="392" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/21-2.png" width="300"/></p>
 <p>圖4.15：模擬圖</p>
-<p><img caption="false" height="579" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/22.png" width="900"/></p><br />細部設計與 BOM << <a href='細部設計與 BOM.html'>Previous</a> <a href='送球機構設計與模擬.html'>Next</a> >> 送球機構設計與模擬</div>
+<p><img caption="false" height="579" src="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g3_1/images/22.png" width="900"/></p>
+<br />細部設計與 BOM << <a href='細部設計與 BOM.html'>Previous</a> <a href='送球機構設計與模擬.html'>Next</a> >> 送球機構設計與模擬</div>
         
     <!-- footer -->
       <div class="container">
