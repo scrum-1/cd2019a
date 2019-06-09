@@ -116,14 +116,14 @@ init_mathjax();
             <header class="site-navbar py-4 bg-white" role="banner">
               <div class="container-fluid">
                 <div class="row align-items-center">
-                <h1>2019 Spring 協同產品設計實習期末報告 A 網站</h1>
+                <h1> 協同產品設計實習期末報告 第四組</h1>
                 <div class="pl-4">
                     <form>
                     <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
                     </form>
                 </div>
                   <!-- <div class="col-11 col-xl-2">
-                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">2019 Spring 協同產品設計實習期末報告 A 網站</a></h1> 
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0"> 協同產品設計實習期末報告 第四組</a></h1> 
                   </div>
                   -->
                   <div class="col-12 col-md-10 d-none d-xl-block">
@@ -136,7 +136,7 @@ init_mathjax();
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='各組期末報告說明.html'>各組期末報告說明</a><li class='has-children'><a href='執行規劃.html'>執行規劃</a><ul class='dropdown'><li><a href='手足球系統模擬.html'>手足球系統模擬</a></li></ul><li class='has-children'><a href='設計與繪圖.html'>設計與繪圖</a><ul class='dropdown'><li><a href='零組件尺寸分析.html'>零組件尺寸分析</a><li><a href='參數設計與繪圖.html'>參數設計與繪圖</a><li><a href='細部設計與 BOM.html'>細部設計與 BOM</a></li></ul><li class='has-children'><a href='V-rep 動態模擬.html'>V-rep 動態模擬</a><ul class='dropdown'><li><a href='送球機構設計與模擬.html'>送球機構設計與模擬</a><li><a href='系統功能展示.html'>系統功能展示</a></li></ul><li class='has-children'><a href='結案報告.html'>結案報告</a><ul class='dropdown'><li><a href='專案口頭簡報.html'>專案口頭簡報</a><li><a href='專案報告書.html'>專案報告書</a></li>
+                     <li><a href='各組期末報告說明.html'>各組期末報告說明</a><li class='has-children'><a href='執行規劃.html'>執行規劃</a><ul class='dropdown'><li><a href='手足球系統模擬.html'>手足球系統模擬</a></li></ul><li class='has-children'><a href='設計與繪圖.html'>設計與繪圖</a><ul class='dropdown'><li><a href='零組件尺寸分析.html'>零組件尺寸分析</a><li><a href='細部設計與 BOM.html'>細部設計與 BOM</a></li></ul><li class='has-children'><a href='V-rep 動態模擬.html'>V-rep 動態模擬</a><ul class='dropdown'><li><a href='問題和討論.html'>問題和討論</a><li><a href='簡化模擬.html'>簡化模擬</a><li><a href='送球機構設計與模擬.html'>送球機構設計與模擬</a><li><a href='設計與模擬影片.html'>設計與模擬影片</a><li class='has-children'><a href='系統功能展示.html'>系統功能展示</a><ul class='dropdown'><li><a href='手足球雙人鍵盤對打.html'>手足球雙人鍵盤對打</a><li><a href='手足球手控與電腦對打.html'>手足球手控與電腦對打</a><li><a href='手足球電腦與電與對打.html'>手足球電腦與電與對打</a><li><a href='模擬問題與討論.html'>模擬問題與討論</a></li></li></ul></ul><li class='has-children'><a href='總結報告.html'>總結報告</a><ul class='dropdown'><li><a href='專案口頭簡報.html'>專案口頭簡報</a><li class='has-children'><a href='專案報告書.html'>專案報告書</a><ul class='dropdown'><li><a href='如何編輯報告書.html'>如何編輯報告書</a></li>
                       </ul>
                 </nav>
               </div>
@@ -147,10 +147,77 @@ init_mathjax();
           </div>
           
         </header>
-    <div id="tipue_search_content">零組件尺寸分析 << <a href='零組件尺寸分析.html'>Previous</a> <a href='細部設計與 BOM.html'>Next</a> >> 細部設計與 BOM<br /><h1>參數設計與繪圖</h1>
-<p>手足球系統的零組件參數設計與繪圖 (零組件初步設計繪圖)</p>
-<p>Onshape 零組件連結</p>
-<br />零組件尺寸分析 << <a href='零組件尺寸分析.html'>Previous</a> <a href='細部設計與 BOM.html'>Next</a> >> 細部設計與 BOM</div>
+    <div id="tipue_search_content">系統功能展示 << <a href='系統功能展示.html'>Previous</a> <a href='手足球手控與電腦對打.html'>Next</a> >> 手足球手控與電腦對打<br /><h1>手足球雙人鍵盤對打</h1>
+<p>檔案:<a href="https://github.com/mdekmol/cd2019a-task1-2019cda_t1_g4/blob/gh-pages/TTT%E6%AA%94/new%20football.ttt">new football</a></p>
+<p>V-REP模擬結果<iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/_rg5RIhGJVw" width="560"></iframe></p>
+<p>PYTHON程式碼</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import vrep
+import keyboard
+from time import sleep
+import sys, math
+vrep.simxFinish(-1) 
+clientID = vrep.simxStart("127.0.0.1", 19997, True, True, 5000, 5)  
+KickBoV = 90   
+n=1
+L_KickBoV = (math.pi/180)*KickBoV
+R_KickBoV = -(math.pi/180)*KickBoV
+if clientID!= -1:  
+    print('connect successfully')
+else:
+    print('connect failed')
+    vrep.simxFinish(clientID)
+print('program ended')
+
+
+
+  
+errorCode,Sphere_handle=vrep.simxGetObjectHandle(clientID,'Sphere',vrep.simx_opmode_oneshot_wait)
+errorCode,Pole_handle=vrep.simxGetObjectHandle(clientID,'Pole',vrep.simx_opmode_oneshot_wait)
+errorCode,Revolute_handle=vrep.simxGetObjectHandle(clientID,'Revolute',vrep.simx_opmode_oneshot_wait)
+errorCode,Prismatic_handle=vrep.simxGetObjectHandle(clientID,'Prismatic',vrep.simx_opmode_oneshot_wait)
+errorCode,Revolute2_handle=vrep.simxGetObjectHandle(clientID,'Revolute2',vrep.simx_opmode_oneshot_wait)
+errorCode,Prismatic2_handle=vrep.simxGetObjectHandle(clientID,'Prismatic2',vrep.simx_opmode_oneshot_wait)
+errorCode,Pole2_handle=vrep.simxGetObjectHandle(clientID,'Pole2',vrep.simx_opmode_oneshot_wait)
+ 
+if errorCode == -1:
+    print('Can not find left or right motor')
+    sys.exit()
+     
+
+     
+def start():
+    errorCode = vrep.simxStartSimulation(clientID,vrep.simx_opmode_oneshot_wait)
+    while True:
+        try:
+            if keyboard.is_pressed('r'):
+                vrep.simxSetJointTargetVelocity(clientID,Revolute_handle,R_KickBoV,vrep.simx_opmode_oneshot_wait)
+            elif keyboard.is_pressed('t'):
+                vrep.simxSetJointTargetVelocity(clientID,Revolute_handle,L_KickBoV,vrep.simx_opmode_oneshot_wait)
+            elif keyboard.is_pressed('q'):
+                vrep.simxSetJointTargetVelocity(clientID,Prismatic_handle,0.05,vrep.simx_opmode_oneshot_wait)
+            elif keyboard.is_pressed('w'):
+                vrep.simxSetJointTargetVelocity(clientID,Prismatic_handle,0,vrep.simx_opmode_oneshot_wait)
+            elif keyboard.is_pressed('e'):
+                vrep.simxSetJointTargetVelocity(clientID,Prismatic_handle,-0.05,vrep.simx_opmode_oneshot_wait)
+             
+            elif keyboard.is_pressed('.'): 
+                vrep.simxSetJointTargetVelocity(clientID,Revolute2_handle,L_KickBoV,vrep.simx_opmode_oneshot_wait)
+            elif keyboard.is_pressed('/'):  
+                vrep.simxSetJointTargetVelocity(clientID,Revolute2_handle,R_KickBoV,vrep.simx_opmode_oneshot_wait)
+            elif keyboard.is_pressed('b'):  
+                vrep.simxSetJointTargetVelocity(clientID,Prismatic2_handle,0.05,vrep.simx_opmode_oneshot_wait)
+            elif keyboard.is_pressed('n'):  
+                vrep.simxSetJointTargetVelocity(clientID,Prismatic2_handle,0,vrep.simx_opmode_oneshot_wait)
+            elif keyboard.is_pressed('m'):  
+                vrep.simxSetJointTargetVelocity(clientID,Prismatic2_handle,-0.05,vrep.simx_opmode_oneshot_wait)
+            else:
+                pass
+        except:
+            break
+        
+start()
+</pre>
+<p></p><br />系統功能展示 << <a href='系統功能展示.html'>Previous</a> <a href='手足球手控與電腦對打.html'>Next</a> >> 手足球手控與電腦對打</div>
         
     <!-- footer -->
       <div class="container">

@@ -147,31 +147,21 @@ init_mathjax();
           </div>
           
         </header>
-    <div id="tipue_search_content">執行規劃 << <a href='執行規劃.html'>Previous</a> <a href='設計與繪圖.html'>Next</a> >> 設計與繪圖<br /><h1>手足球系統模擬</h1>
-<p>專案成果摘要</p>
-<p>1.手足球桌檯設計與繪圖</p>
-<p>2.手足球 vrep 模擬</p>
-<p>3.迴球、送球機構設計&amp;模擬</p>
-<p>4.Vrep 程式簡化模擬</p>
-<p>5.桌檯細部設計與 BOM</p>
-<p>專案執行動機</p>
-<p>          相信大家小時候都玩過或看過類似的手足球機台，但是現在在我們周遭這種東西已經少之又少。為了重回小時候對手足球的熱情，我們試著把它用電腦模擬出來，並製作回球機構， 使我們的手足球機台可以比以前的更加方便。</p>
-<p>專案執行成員</p>
-<p><a href="https://github.com/40623102">40623102</a><span> </span>吳柔燕          <a href="https://github.com/40623124">40623124</a><span> </span>葉修宏</p>
-<p><a href="https://github.com/40623110">40623110</a><span> </span>翁俊揚          <a href="https://github.com/40623132">40623132</a><span> </span>趙家傑</p>
-<p><a href="https://github.com/40623111">40623111</a><span> </span>王映捷          <a href="https://github.com/40623144">40623144</a><span> </span>林昭權</p>
-<p><a href="https://github.com/40623113">40623113</a><span> </span>吳承哲          <a href="https://github.com/40623152">40623152</a><span> </span>潘季宏</p>
-<p><a href="https://github.com/40623121">40623121</a><span> </span>蔡朝旭          <a href="https://github.com/40623157">40623157</a><span> </span>李昀霖</p>
-<p>執行使用套件</p>
-<p><a href="https://www.onshape.com/">Onshape</a><span>、V-rep、<a href="https://github.com/">Github</a> 、<a href="https://www.scintilla.org/SciTEDownload.html">SciTE</a></span></p>
-<p>專案執行過程規劃</p>
-<p>W11分配各組員所負責之項目</p>
-<p>W12至 W16為各組員所需完成之項目</p>
-<p>W16至W17為期末專案PDF製作</p>
-<p>專案執行內容</p>
-<p>專案結論</p>
-<p><span>相關文獻探討</span></p>
-<p><span><a href="https://1516a046-a-62cb3a1a-s-sites.googlegroups.com/site/tornadosportstaiwan/Products/Tables/Elite/Tornado-FoosballHm.pdf?attachauth=ANoY7crgSd50vq4hyRs_55OvS8On1iqL2XEsVRohGQulSNxMc0LnQS0z-HbFGfJNHsR4k8mONaGEGJgJ2EhdcM-t8R2WMc4NUyEgVufEkoa-6J609sn1L0cK7ogEDOX0IQi-HmENUTfL_OMDMcYZ5d6q15lVpNiV9i14YCXk26CZZXPHxyDdF3OTvIit3mekHsY5-GrKSQq63rwrHvgLbzjvIVJrgK2OhgTkEZBTgzvQAP0qzjYUIgk1RkCUlFIYn2EImRuiZUZKp32uHNWHvwF8Wd3leTMb8A%3D%3D&amp;attredirects=0">台桌尺寸規格</a>、<a href="http://blog.sina.com.tw/9357/article.php?entryid=1998">球的尺寸</a> 、<a href="https://www.thingiverse.com/thing:1090">手足球人偶</a> 、<a href="http://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm">Python 程式語法</a></span></p><br />執行規劃 << <a href='執行規劃.html'>Previous</a> <a href='設計與繪圖.html'>Next</a> >> 設計與繪圖</div>
+    <div id="tipue_search_content">問題和討論 << <a href='問題和討論.html'>Previous</a> <a href='送球機構設計與模擬.html'>Next</a> >> 送球機構設計與模擬<br /><h1>簡化模擬</h1>
+<p>首先在<span> onshape </span>將想要使用的零件圖或組合圖按照如下圖</p>
+<p>匯出成<span>.stl </span>檔，再至<span>v-rep </span>中開啟<span>.stl </span>檔<span> </span>使用<span> [File</span>–<span>&gt;Import</span>–<span>&gt;Mash</span>…<span>]</span>，如下圖</p>
+<p>依據個人所需去做點選，在按<span> OK </span>即可在視窗中導入模型。可以從下圖中看出</p>
+<p>導入的模型是未分離的模型<span> (</span>如若是零件圖則不須此步驟<span>)</span>，</p>
+<p>所以我們使用  [Edit–<span>&gt;Grouping/Merging</span>–<span>&gt;Divideselectedshapes]  </span>來將模型中的物件全都爆開，如下圖</p>
+<p>接下來說明桌檯簡化步驟</p>
+<p><span>1 .<span>使用</span><span>[File</span><span>–</span><span>&gt;Newscene] 建立新的檔案<span color="#00000B" style="color: #00000b;">，</span><span color="#FF00FF" style="color: #ff00ff;"><span lang="EN-US"><span> </span></span></span>然後</span></span>使用 <span>[Edit&gt;CopyselectedObjects] </span>到一個新建的場景<span>。</span></p>
+<p>2 . 將人物貼上<span> </span>使用 <span> [Edit </span>–<span>&gt; Paste buffer]</span>。</p>
+<p>再點選簡化 的對話框 <span>Operations on selected triangles </span>中的<span> Extract cuboid </span>如下圖</p>
+<p>5 . 之後會出現<span> Primitive cuboid </span>的對話框並按下<span> OK </span>即會產生一個立方體如下圖</p>
+<p>桌檯的簡化 就完成了<span><span color="#00000B" style="color: #00000b;">！</span></span><span color="#FF00FF" style="color: #ff00ff;"><span lang="EN-US"><span> </span></span></span></p>
+<p>簡化示範影片<span><span color="#00000B" style="color: #00000b;">：</span></span><span color="#FF00FF" style="color: #ff00ff;"><span lang="EN-US"><span> </span></span></span></p>
+<p><span color="#FF00FF" style="color: #ff00ff;"><span lang="EN-US"><span><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/nlnmwvENZlE" width="560"></iframe></span></span></span></p>
+<p><span color="#FF00FF" style="color: #ff00ff;"><span lang="EN-US"><span><a href='/get_page/%E7%B0%A1%E5%8C%96%E6%A8%A1%E6%93%AC/&lt;iframe width="560" height="315" src="https:/www.youtube.com/embed/nlnmwvENZlE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;'></a></span></span></span></p><br />問題和討論 << <a href='問題和討論.html'>Previous</a> <a href='送球機構設計與模擬.html'>Next</a> >> 送球機構設計與模擬</div>
         
     <!-- footer -->
       <div class="container">
